@@ -13,6 +13,7 @@ WORKDIR /root/code/
 
 
 RUN git clone https://github.com/Z3Prover/z3.git z3
+RUN git checkout z3-4.8.10
 WORKDIR /root/code/z3
 
 RUN git clean -nx src
