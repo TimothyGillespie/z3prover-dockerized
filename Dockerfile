@@ -1,4 +1,4 @@
-FROM alpine AS build-z3prover
+FROM alpine
 
 RUN apk update
 RUN apk add \
@@ -24,3 +24,7 @@ RUN cmake -G "Unix Makefiles" -DCMAKE_BUILD_TYPE=Release ../
 
 RUN make
 RUN make install
+
+RUN cp /root/code/z3/LICENSE.txt /usr/local/bin/z3-LICENSE.txt
+RUN rm -rf /root/code
+RUN z3 --version
